@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .img1{
+            border-radius: 2px;
+            border: 1px solid black;
+            margin-top:20px;
+        }
+      
+        body{
+            background-image:conic-gradient(rgb(154, 141, 141),rgb(145, 145, 238))
+        }
+        .ins{
+            text-align: center;
+            background-color: blue;
+        }
+       
+        div{
+            border: 2px solid black;
+            width:650px;
+            height:350px;
+            margin: auto;
+            padding: 10px;
+            overflow-y: scroll;
+        }
+        .title{
+            background-color:dimgrey;
+            width: 50%;
+        }
+        .pimg{
+            mask-image: linear-gradient (black, transparent);
+        }
+    </style>
+</head>
+<body>
+    <script>
+g=localStorage.getItem("ing")
+
+obj=JSON.parse(g)
+
+console.log(obj);
+
+center=document.createElement("center")
+document.body.appendChild(center)
+
+var img=document.createElement("img")
+document.body.appendChild(img)
+img.setAttribute("src",obj.Image)
+img.setAttribute("class","img1")
+center.appendChild(img)
+
+h1=document.createElement("h1")
+document.body.appendChild(h1)
+h1.innerText="INSTRUCTIONS TO PREPARE"
+h1.setAttribute("class","ins")
+
+h1=document.createElement("h1")
+document.body.appendChild(h1)
+h1.innerText=obj.Title
+center.appendChild(h1)
+h1.setAttribute("class","title")
+
+
+div=document.createElement("div")
+document.body.appendChild(div)
+h2=document.createElement("h2")
+h2.innerText=obj.Instructions
+div.appendChild(h2)
+
+
+    </script>
+</body>
+</html>
